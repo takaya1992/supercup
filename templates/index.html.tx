@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スーパーカップダンススタジアム ツイート カウンター</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <style>
+  .type-number {
+    text-align: right;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-size-7-mobile">
+      <a class="navbar-item" href="/">#スーパーカップダンススタジアム カウンター</a>
+    </div>
+  </nav>
+  <section class="section">
+    <table class="table is-striped is-size-7-mobile">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>高校</th>
+          <th>投稿</th>
+          <th>RT</th>
+          <th>合計</th>
+        </tr>
+      </thead>
+      <tbody>
+        : for $results -> $result {
+          <tr>
+            <td><: number_separator($result.rank) :></td>
+            <td><: $result.high_school_name :></td>
+            <td class="type-number"><: number_separator($result.tweet_count) :></td>
+            <td class="type-number"><: number_separator($result.sum_retweet_count) :></td>
+            <td class="type-number"><: number_separator($result.total) :></td>
+          </tr>
+        : }
+      </tbody>
+    </table>
+  </section>
+  <section class="section">
+    <div class="content">
+      <h2 class="title is-4">このサイトについて</h2>
+      <p>
+      <a href="https://twitter.com/search?src=typd&q=%23%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AB%E3%83%83%E3%83%97%E3%83%80%E3%83%B3%E3%82%B9%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0" target="_blank">#スーパーカップダンススタジアム</a>の投稿数を数える<strong>非公式な</strong>サイトです。<br>
+        Twitterの検索に引っかからないことがあり、抜け漏れが多いかもしれないので参考程度に。
+      </p>
+      <p>
+        作者は <a href="https://twitter.com/search?q=%23%E4%BC%8A%E5%A5%88%E5%AD%A6%E5%9C%92%E7%B7%8F%E5%90%88%E9%AB%98%E6%A0%A1&src=typd">#伊奈学園総合高校</a> の卒業生である <a href="https://twitter.com/takaya1992" target="_blank">@takaya1992</a> です。
+      </p>
+    </div>
+  </section>
+</body>
+</html>
